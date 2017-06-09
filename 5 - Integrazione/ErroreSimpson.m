@@ -4,7 +4,7 @@
 
 function errore = ErroreSimpson(f4, a, b, xi)
   h = (b - a)/2;
-  errore = (f4(xi)/90)*h^5;
+  errore = abs((f4(xi)/90)*h^5);
   disp('ricordarsi di plottare per trovare il max della funzione')
   fprintf('Errore Simpson: (f4(%i)/90)*%i^5 = %i\n', xi, h, errore);
 end
