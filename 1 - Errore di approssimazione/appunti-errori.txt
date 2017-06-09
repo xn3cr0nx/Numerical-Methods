@@ -1,0 +1,13 @@
+ERRORE ASSOLUTO E ERRORE RELATIVO
+Sia 'p' il valore corretto, e sia 'p*' il valore approssimato di p.
+Allora, Errore Assoluto:= abs(p - p*)
+        Errore Relativo:= abs(p - p*) / abs(p)
+
+Ogni operazione aritmetica eseguita al calcolatore introduce degli
+errori. Ciò significa che più operazioni facciamo, più l'errore può
+essere alto.
+Questo fatto è importante soprattutto nell'applicazione di formule
+algebriche, ad esempio la formula per ricavare le radici di un polinomio
+di secondo grado. Nel calcolo al calcolatore è conveniente utilizzare
+formule alternative, che riducono l'errore sul risultato.
+

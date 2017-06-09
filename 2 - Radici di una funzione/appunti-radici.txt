@@ -1,0 +1,6 @@
+Per chiarezza, il problema consiste nel trovare le soluzioni tali per cui f(x) = 0, data una funzione.
+
+I metodi che studiamo sono: bisezione, secanti, Newton.
+
+Ci sono già molti appunti sul quaderno, oppure puoi leggere il libro che tanto c'è scritto solo il necessario.
+
