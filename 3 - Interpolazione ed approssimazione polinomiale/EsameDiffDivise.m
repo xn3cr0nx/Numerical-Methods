@@ -16,7 +16,7 @@ P = PolinomioLagrange(X_points, Y_points, f);
 fP = inline(P);
 
 fprintf('\n\nFunzione calcolata nel punto %i: %i\n', x, fP(x));
-fprintf('\nErrore assoluto: %d\n', abs(fP(x) - f(x))');
+fprintf('\nErrore assoluto:\t %d\n', abs(fP(x) - f(x))');
 
 
 %% Calcolo errore Polinomio Lagrange
@@ -28,13 +28,31 @@ fprintf('\nErrore assoluto: %d\n', abs(fP(x) - f(x))');
 max_derivata = 0;
 grado_derivata = length(X_points);
 
-err = ErroreLagrange(grado_derivata, max_derivata, f3, x, X_points);
-
-fprintf('Errore massimo teorico: %d\n', err);
+err_max = ErroreLagrange(grado_derivata, max_derivata, f3, x, X_points);
 
 fprintf('\nFare un ciclo for per comprendere il caso in cui si hanno più punti da valutare\n\n');
 
 %% DIFF DIVISE
 
 
-D = DiffDivise(X_points, Y_points)
+% X_points(4) = 3/4;
+% Y_points = f(X_points);
+D = DiffDivise(X_points, Y_points);
+
+P2 = PolinomioDiffDivise(D, X_points);
+fP2 = inline(P2);
+
+fprintf('\n\nFunzione calcolata nel punto %i: %i\n', x, fP2(x));
+fprintf('\nErrore assoluto: %d\n', abs(fP2(x) - f(x))');
+
+
+
+
+
+
+
+
+
+
+
+
