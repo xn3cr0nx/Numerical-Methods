@@ -2,8 +2,8 @@
 % y_points: array con i punti f(x) (ovviamente f non la si conosce)
 % P: polinomio di Lagrange
 
-function P = PolinomioLagrange(x_points, y_points)
-  disp('Metodo dei Polinomi elementari')
+function P = PolinomioLagrange(x_points, y_points, f)
+  fprintf('\nMetodo dei Polinomi elementari\n\n')
   n = length(x_points);
   syms x;
   P = 0; % polinomio
@@ -27,12 +27,30 @@ function P = PolinomioLagrange(x_points, y_points)
   % Il polinomio diventa della forma x^n + x^n-1 + ... + x0
   if n ~= 1
     P = expand(P);
- 
-    fprintf('Qui svolgere P%i(x)\n', j-1);
+
+    fprintf('\nP%d = ', j-1);
+    % Qui stampo i valori in forma parametrica
+    for i=1:n
+      fprintf('f(%d)*L%i,%i', x_points(i), j-1, i-1);
+      if i ~= n
+        fprintf(' + ');
+      end
+    end
+    % Qui sostituisco i valori numerici ai parametri
+    fprintf('\n   = ');
+    for i=1:n
+      fprintf('%d*L%i,%i', f(x_points(i)), j-1, i-1);
+      if i ~= n
+        fprintf(' + ');
+      end
+    end
+    
+    
+    fprintf('\n');
     format long
     % Stampa i coefficienti, [x(n) x(n-1) ... x(1) x(0)]
     coefficienti = double(fliplr(coeffs(P)));
-    
   end
-  fprintf('Forma canonica P%i = %s', length(x_points)-1, P); 
+    
+    fprintf('Forma canonica P%i = %s\n', length(x_points)-1, P);
 end

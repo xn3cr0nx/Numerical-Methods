@@ -1,4 +1,4 @@
-clear all
+clear
 clc
 
 funzione = '(x^2)*cos(x)';
