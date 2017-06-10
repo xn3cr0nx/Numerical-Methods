@@ -67,7 +67,7 @@ L = Cholesky(A)
 Y = SostituzioneAvanti(L, b)'
 
 Am = [L' Y];
-X = SostituzioneIndietro(Am)'
+X = SostituzioneIndietro(Am)';
 
 A*X
 
@@ -75,13 +75,12 @@ A*X
 [L, D] = FattorizzazioneLDL(A)
 %L*D*L' == A
 
-Y = SostituzioneAvanti(L, b)'
+Y = SostituzioneAvanti(L, b)';
 
 % Costruisco Z
 for i=1:length(Y)
   Z(i,1) = Y(i)/D(i,i);
 end
-Z
 
 Am = [L' Z];
 X = SostituzioneIndietro(Am)';

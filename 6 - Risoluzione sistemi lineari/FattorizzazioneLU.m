@@ -10,14 +10,17 @@ function [L, U] = FattorizzazioneLU(A)
   n = length(U);
   L = eye(n);
   disp('Costruzione L')
-  L
   for i=1:n
     for j=i:n
       sommatoria = 0;
+
       for k=1:i-1
+        fprintf('\nsomm(L(%i,%i)*U(%i,%i)) = ', j, k, k, i)
+        disp('+')
         sommatoria = sommatoria + L(j,k)*U(k,i);
+        fprintf('L(%i,%i)*U(%i,%i) = %i*%i = %i\n', j, k, k, i, L(j,k), U(k,i), L(j,k)*U(k,i))
       end
-      fprintf('L(%i,%i) = (A(%i,%i) - sommatoria)/U(%i,%i) = (%i - %i)/%i = ', j, i, j, i, i, i, A(j,i), sommatoria, U(i,i))
+      fprintf('L(%i,%i) = (A(%i,%i) - somm(L(%i,k)*U(%i,k)))/U(%i,%i) = (%i - %i)/%i = ', j, i, j, i, j, i, i, i, A(j,i), sommatoria, U(i,i))
       L(j,i) = (A(j,i) - sommatoria)/U(i,i);
       fprintf('%i\n', L(j,i));
     end
