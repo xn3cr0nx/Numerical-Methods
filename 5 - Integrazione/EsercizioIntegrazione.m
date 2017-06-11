@@ -25,6 +25,8 @@ int1 = TrapezioComposto(f, a, b, n);
 % err_abs1 = abs(int1 - valore_esatto);
 fprintf('Errore assoluto Trapezio: %i\n', abs(int1 - val));
 err_max1 = ErroreTrapezioComposto(f2, a, b, n, maxf2);
+fprintf('Intervallo massimo in cui si è sicuri di trovare l integrale: \n')
+fprintf('integrale +- errore_massimo = %i +- %i = [%i, %i]\n', int1, err_max1, int1-err_max1, int1+err_max1)
 
 fprintf('\n ---------------------------------- \n\n');
 
@@ -32,6 +34,8 @@ int2 = SimpsonComposto(f, a, b, n);
 % err_abs2 = abs(int2 - valore_esatto);
 fprintf('Errore assoluto Simpson: %i\n', abs(int2 - val));
 err_max2 = ErroreSimpsonComposto(f4, a, b, n, maxf4);
+fprintf('Intervallo massimo in cui si è sicuri di trovare l integrale: \n')
+fprintf('integrale +- errore_massimo = %i +- %i = [%i, %i]\n', int2, err_max2, int2-err_max2, int2+err_max2)
 
 
 fprintf('\n ---------------------------------- \n\n');

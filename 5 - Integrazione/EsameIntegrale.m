@@ -19,7 +19,7 @@ valore_esatto = 0;
 n = 8;
 
 
-%% Plotto il grafico per vedere il massimo di f2 e f4 nell'intervallo [a,b]
+% Plotto il grafico per vedere il massimo di f2 e f4 nell'intervallo [a,b]
 %fplot(funzione2, [a,b])
 %fplot(funzione4, [a,b])
 

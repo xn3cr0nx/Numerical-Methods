@@ -13,4 +13,5 @@ function errore = ErroreTrapezioComposto(f2, a, b, n, xi)
   fprintf('= |f2(%d)*(%d - %d)*(%d ^2)/12|\n', xi, b, a, h);
   fprintf('= |%d * %d * %d / 12|\n', f2(xi), b-a, h^2);
   fprintf('= %i\n', errore);
+  
 end
