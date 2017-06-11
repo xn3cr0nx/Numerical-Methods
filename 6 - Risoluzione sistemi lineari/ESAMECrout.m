@@ -10,9 +10,12 @@ b = [3.5 7.7 -5 -22.5]';
 
 [L, U] = Crout(A)
 
-Y = SostituzioneAvanti(L, b)';
+fprintf('\n----------------------------------\n\n')
+fprintf('Soluzione sistema\n')
+Y = SostituzioneAvanti(L, b)'
 
 Am = [U Y];
-X = SostituzioneIndietro(Am)';
+X = SostituzioneIndietro(Am)'
 
+fprintf('Confronta il risultato qui sotto con il vettore b\n');
 A*X
