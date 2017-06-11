@@ -29,12 +29,14 @@ function p = Newton(f, p0, n_max, TOL, h)
       fprintf('\nCiclo %i\n', i);
       fprintf('p: %f, p+1: %f\n', p0, p);
       fprintf('f(p): %f, f`(p): %f\n', f(p), slope);
-      fprintf('diff: %f\n', abs(p-p0));
+      fprintf('Differenza precedente: %f\n', abs(p-p0));
       if abs(f(p)) < EPS % f(p) = 0, ma sul computer è difficile avere 0
+        fprintf('\n----------------------------------\n\n')
         fprintf('Risultato esatto: %f\n', p)
         break
       end
       if abs(p - p0) < TOL
+        fprintf('\n----------------------------------\n\n')
         fprintf('Risultato sotto TOL: %f\n', p)
         break
       end
@@ -42,7 +44,7 @@ function p = Newton(f, p0, n_max, TOL, h)
     end 
   end
   if i == n_max
-    fprintf('Numero massimo di iterazioni raggiunto.\nControllare il risultato\n')
+    fprintf('\nNumero massimo di iterazioni raggiunto.\nControllare il risultato\n')
   else
     fprintf('Iterazioni: %d\n', i)
   end
