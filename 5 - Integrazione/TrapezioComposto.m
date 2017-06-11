@@ -11,7 +11,7 @@ function integrale = TrapezioComposto(f, a, b, n)
   somma_parziale = 0; % è la sommatoria che compare nella formula
   for j=1:(n-1)
     somma_parziale = somma_parziale + f(a+j*h);
-     fprintf('f(%i+%i*%i) = %i\n', a, j, h, f(a+j*h)); 
+     fprintf('f(%i+%i*%i) = f(%i) = %i\n', a, j, h, a+j*h, f(a+j*h)); 
   end
   fprintf(' = %i\n\n', somma_parziale);
   

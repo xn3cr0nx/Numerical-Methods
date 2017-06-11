@@ -14,7 +14,7 @@ function integrale = SimpsonComposto(f, a, b, n)
   for j=1:((n/2)-1)
     disp('+')
     somma_parziale1 = somma_parziale1 + f(a+2*j*h);
-    fprintf('f(%i+2*%i*%i) = %i\n', a, j, h, f(a+2*j*h)); 
+    fprintf('f(%i+2*%i*%i) = f(%i) = %i\n', a, j, h, a+2*j*h, f(a+2*j*h)); 
   end
   fprintf(' = %i\n\n', somma_parziale1);
   
@@ -22,7 +22,7 @@ function integrale = SimpsonComposto(f, a, b, n)
   for j=1:(n/2)
     disp('+')
     somma_parziale2 = somma_parziale2 + f(a+(2*j-1)*h);
-    fprintf('f(%i+(2*%i-1)*%i) = %i\n', a, j, h, f(a+(2*j-1)*h));
+    fprintf('f(%i+(2*%i-1)*%i) = f(%i) = %i\n', a, j, h, a+(2*j-1)*h, f(a+(2*j-1)*h));
   end
   fprintf(' = %i\n\n', somma_parziale2);
   

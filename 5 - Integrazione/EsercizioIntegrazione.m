@@ -23,7 +23,7 @@ fprintf('\n ---------------------------------- \n\n');
 
 int1 = TrapezioComposto(f, a, b, n);
 % err_abs1 = abs(int1 - valore_esatto);
-fprintf('Errore assoluto Simpson: %i\n', abs(int1 - val));
+fprintf('Errore assoluto Trapezio: %i\n', abs(int1 - val));
 err_max1 = ErroreTrapezioComposto(f2, a, b, n, maxf2);
 
 fprintf('\n ---------------------------------- \n\n');
