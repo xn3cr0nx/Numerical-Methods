@@ -14,7 +14,7 @@ function L = Cholesky(A)
   
   for i=1:n-1
     sommatoria = 0;
-    fprintf('\nsomm(L(%i,k)^2) = \n', i);
+    fprintf('\nsomm(L(%i,k)^2) = 0\n', i);
     for k=1:i-1
       disp('+')
       sommatoria = sommatoria + L(i,k)^2;
@@ -25,7 +25,7 @@ function L = Cholesky(A)
     
     for j=i+1:n
       sommatoria = 0;
-      fprintf('\nsomm(L(%i,k)*L(%i,k)) = \n', j, i);
+      fprintf('\nsomm(L(%i,k)*L(%i,k)) = 0\n', j, i);
       for k=1:i-1
         disp('+')
         sommatoria = sommatoria + L(j,k)*L(i,k);

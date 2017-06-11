@@ -1,10 +1,9 @@
 % A: matrice del sistema A*X = b
 % b: vettore dei termini noti del sistema A*X = b
-% T: matrice T dell'equazione X = T*X + c, estratta con Jacobi
-% c: vettore c dell'equazione X = T*X + c, estratto con Jacobi
+% T: matrice T dell'equazione X = T*X + c, estratta con Gauss-Siedel
+% c: vettore c dell'equazione X = T*X + c, estratto con Gauss-Siedel
 
-function [T, c] = Jacobi(A, b)
-  disp('Costruzione T e c con Metodo di Jacobi')
+function [T, c] = GaussSeidel(A, b)
   n = length(A);
   D = eye(n);
   L = zeros(n);
@@ -21,20 +20,17 @@ function [T, c] = Jacobi(A, b)
     end
   end
   
-  T = inv(D)*(L+U);
-  fprintf('\nT = inv(D)*(L+U) = ')
-  invD = inv(D)
-  disp('*')
+  T = inv(D-L)*U;
+  fprintf('\nT = inv(D-L)*U = ')
+  D
+  disp('-')
   L
-  disp('+')
-  U
+  disp('=')
+  DL = D-L
+  disp('=>')
+  invDL = 
   disp('=')
   T
-  c = inv(D)*b;
-  fprintf('\nc = inv(D)*b = ')
-  invD
-  disp('*')
-  b
-  disp('=')
-  c
+  c = inv(D-L)*b;
+  fprintf('c = inv(D)*b = %i*%i = %i\n', inv(D), b, inv(D)*b);
 end

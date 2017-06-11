@@ -10,7 +10,7 @@ function [L ,D] = FattorizzazioneLDL(A)
   disp('Costruzione D e L con Fattorizzazione LDL')
   for i=1:n
     sommatoria = 0;
-    fprintf('\nsomm(L(%i,j)^2*D(j,j)) = \n', i)
+    fprintf('\nsomm(L(%i,j)^2*D(j,j)) = 0\n', i)
     for j=1:i-1
       disp('+')
       sommatoria = sommatoria + L(i,j)^2*D(j,j);
@@ -23,7 +23,7 @@ function [L ,D] = FattorizzazioneLDL(A)
     disp(' ')
     for j=i:n
       sommatoria = 0;
-      fprintf('\nsomm(L(%i,k)*L(%i,k)*D(k,k)) = \n', j, i)
+      fprintf('\nsomm(L(%i,k)*L(%i,k)*D(k,k)) = 0\n', j, i)
       for k=1:i-1
         disp('+')
         sommatoria = sommatoria + L(j,k)*L(i,k)*D(k,k);
