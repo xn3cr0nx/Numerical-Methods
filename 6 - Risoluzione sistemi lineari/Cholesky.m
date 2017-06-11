@@ -12,7 +12,8 @@ function L = Cholesky(A)
     fprintf('L(%i,1) = A(%i,1)/L(1,1) = %i\n', j, j, A(j,1)/L(1,1));
   end
   
-  for i=1:n-1
+  for i=2:n
+    fprintf('\n------\nColonna: %d', i);
     sommatoria = 0;
     fprintf('\nsomm(L(%i,k)^2) = 0\n', i);
     for k=1:i-1
@@ -21,7 +22,7 @@ function L = Cholesky(A)
       fprintf('L(%i,%i)^2 = %i\n', i, k, L(i,k)^2)
     end
     L(i,i) = sqrt(A(i,i) - sommatoria);
-    fprintf('L(%i,%i) = sqrt(A(%i,%i) - somm(L(%i,k)^2) = %i - %i = %i\n', i, i, i, i, i, sqrt(A(i,i)), sommatoria, sqrt(A(i,i)) - sommatoria);
+    fprintf('L(%i,%i) = sqrt(A(%i,%i) - somm(L(%i,k)^2) = sqrt(%i - %i) = %i\n', i, i, i, i, i, A(i,i), sommatoria, L(i,i));
     
     for j=i+1:n
       sommatoria = 0;
@@ -32,7 +33,7 @@ function L = Cholesky(A)
         fprintf('L(%i,%i)*L(%i,%i) = %i\n', j, k, i, k, L(j,k)*L(i,k))
       end
       L(j,i) = (A(j,i)-sommatoria)/L(i,i);
-      fprintf('L(%i,%i) = (sqrt(A(%i,%i) - somm(L(%i,k)*L(%i,k))/L(%i,%i)) = (%i - %i)/%i = %i\n', j, i, j, i, j, i, i, i, sqrt(A(j,i)), sommatoria, L(i,i), (sqrt(A(j,i)) - sommatoria)/L(i,i));
+      fprintf('L(%i,%i) = (A(%i,%i) - somm(L(%i,k)*L(%i,k)))/L(%i,%i) = (%i - %i)/%i = %i\n', j, i, j, i, j, i, i, i, A(j,i), sommatoria, L(i,i), L(j,i));
     end
   end
 end
