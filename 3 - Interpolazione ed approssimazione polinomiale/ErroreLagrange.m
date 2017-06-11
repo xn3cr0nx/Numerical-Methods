@@ -6,7 +6,7 @@ function errore = ErroreLagrange(grado_derivata, max_derivata, f_derivata, x, x_
   n = length(x_points);
   prodotto_binomi = 1;
 
-  fprintf('\nErrore massimo teorico = |f%d(xi)/%d! ', grado_derivata, grado_derivata);
+  fprintf('Errore massimo teorico = |f%d(xi)/%d! ', grado_derivata, grado_derivata);
   for i=1:n
     fprintf('* (x - x%d) ', i-1);
   end
