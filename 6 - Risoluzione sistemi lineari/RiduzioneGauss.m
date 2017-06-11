@@ -3,6 +3,8 @@
 
 function A = RiduzioneGauss(A)
   n = length(A(:,1));
+  fprintf('\n----------------------------------\n\n')
+  fprintf('\tRiduzione di Gauss\n');
   for i=1:n
     A
     A = CercaPivot(A, i);
@@ -10,9 +12,10 @@ function A = RiduzioneGauss(A)
       fprintf('Errore, il pivot %d è 0.\n', i)
       return
     end
+    fprintf('Pivot attuale: A(%d,%d)\n', i,i);
     
     for j=i+1:n
-      fprintf('Riga %i, coefficiente: A(%i,%i)/A(%i,%i)=%i\n', j, j, i, i, i, A(j,i)/A(i,i));
+      fprintf('\nRiga %i, coefficiente: A(%i,%i)/A(%i,%i)=%i\n', j, j, i, i, i, A(j,i)/A(i,i));
       coeff = A(j,i)/A(i,i);
         for k=i:n
           fprintf('Colonna %i\n', k);
@@ -22,6 +25,8 @@ function A = RiduzioneGauss(A)
         end
     end
   end
+  fprintf('\t Fine Riduzione di Gauss\n');
+  fprintf('\n----------------------------------\n\n')
 end
 
 %       fprintf('A(%i,:) = A(%i,:) - (A(%i,%i)/A(%i,%i))*A(%i,:) = %i - (%i/%i))*%i\n', j, j, j, i, i, i, i, A(j,:), A(j,i), A(i,i), A(i,:));
