@@ -89,6 +89,8 @@ X = SostituzioneIndietro(Am)';
 A*X
 
 %% ESERCIZIO 6
+clear all
+clc
 
 A = [3 1 0; 2 4 1; 0 2 5];
 b = [-1 7 9]';
@@ -113,12 +115,15 @@ A*X
 % Inoltre viene anche considerato il raggio spettrale per valutare la
 % convergenza.
 
+clear all
+clc
+
 A = [2 -1 1; 2 2 2; -1 -1 2];
 b = [-1 4 -5]';
 soluzione = [1 2 -1]';
 
 % Jacobi
-[T, c] = Jacobi(A, b)
+[T, c] = Jacobi(A, b);
 
 X = zeros(length(c), 1); % vettore colonna di zeri
 
@@ -126,7 +131,7 @@ num_iterazioni= 4;
 X = IteraCicli(T, c, X, num_iterazioni)
 
 % Gauss-Seidel
-[T, c] = GaussSeidel(A, b)
+[T, c] = GaussSeidel(A, b);
 
 X = zeros(length(c), 1);
 

@@ -4,7 +4,7 @@
 % c: vettore c dell'equazione X = T*X + c, estratto con Jacobi
 
 function [T, c] = Jacobi(A, b)
-  disp('Costruzione T e c con Metodo di Jacobi')
+  disp('Costruzione T con Jacobi')
   n = length(A);
   D = eye(n);
   L = zeros(n);
@@ -12,29 +12,17 @@ function [T, c] = Jacobi(A, b)
   for i=1:n
     fprintf('Iterazione %i\n', i);
     D(i,i) = A(i,i);
-    fprintf('D(%i,%i) = A(%i,%i) = %i\n', i, i, i, i, A(i,i));
+    fprintf('D(%i,%i) = A(%i,%i) = %i\n', i, i, i, i, A(i,i))
     for j=i+1:n
       L(j,i) = -A(j,i);
-      fprintf('L(%i,%i) = -A(%i,%i) = %i\n', j, i, j, i, -A(j,i));
+      fprintf('L(%i,%i) = -A(%i,%i) = %i\n', j, i, j, i, -A(j,i))
       U(i,j) = -A(i,j);
-      fprintf('U(%i,%i) = -A(%i,%i) = %i\n', i, j, i, j, -A(i,j));
+      fprintf('L(%i,%i) = -A(%i,%i) = %i\n', i, j, i, j, -A(i,j))
     end
   end
   
   T = inv(D)*(L+U);
-  fprintf('\nT = inv(D)*(L+U) = ')
-  invD = inv(D)
-  disp('*')
-  L
-  disp('+')
-  U
-  disp('=')
-  T
+  fprintf('T = inv(D)*(L+U) = %i*(%i+%i) = %i\n', inv(D), L, U, inv(D)*(L+U))
   c = inv(D)*b;
-  fprintf('\nc = inv(D)*b = ')
-  invD
-  disp('*')
-  b
-  disp('=')
-  c
+  fprintf('c = inv(D)*b = %i',)
 end
