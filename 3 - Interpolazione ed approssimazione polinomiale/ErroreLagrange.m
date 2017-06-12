@@ -18,8 +18,8 @@ function errore = ErroreLagrange(grado_derivata, max_derivata, f_derivata, x, x_
   for i=1:n
     prodotto_binomi = prodotto_binomi * (x - x_points(i));
   end
-    
+  fprintf('|\n = |%d/%d*%d', f_derivata(max_derivata), factorial(grado_derivata), prodotto_binomi)
+  fprintf('|\n = |%d*%d', f_derivata(max_derivata)/factorial(grado_derivata), prodotto_binomi)
   errore = abs((f_derivata(max_derivata)/factorial(grado_derivata))*prodotto_binomi);
-  
-  fprintf('|\n =\t %d\n', errore);
+  fprintf('|\n =\t %d', errore);
 end

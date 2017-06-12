@@ -36,8 +36,8 @@ P = PolinomioLagrange(X_points, Y_points, f);
 fP = inline(P);
 
 for i=1:length(x)
-  fprintf('\n\nFunzione calcolata nel punto %i: %i\n', x(i), fP(x(i)));
-  fprintf('Errore assoluto:\t %d\n', abs(fP(x(i)) - f(x(i)))');
+  fprintf('\n\nFunzione calcolata nel punto %i: P(%i) = %i\n', x(i), x(i), fP(x(i)));
+  fprintf('Errore assoluto:\t |P(%i)-f(%i)| = |%d-%d| = %d\n', x(i), x(i), fP(x(i)), f(x(i)), abs(fP(x(i)) - f(x(i)))');
   if chiede_err_max == 1
     err_max = ErroreLagrange(grado_derivata, max_derivata, f3, x(i), X_points);
   end
