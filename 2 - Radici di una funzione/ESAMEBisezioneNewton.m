@@ -43,12 +43,11 @@ TOL = 10^-5;
 n_iterazioni_max = 3;
 
 % Intervallo iniziale
-a = 1;
-b = 2;
+p = 1.0;
 
 fprintf('\n----------------------------------\n\n')
 disp('Metodo Newton')
-p_newton = Newton(f, 1.0, n_iterazioni_max, TOL);
+p_newton = Newton(f, p, n_iterazioni_max, TOL);
 fprintf('Valore di f nel punto %d: %d\n', p_newton, f(p_newton));
 
 
